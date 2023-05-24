@@ -35,7 +35,7 @@ public class ApplicationForCardTest {
 
     //Фамилия в одно слово
     @Test
-    void test() {
+    void testShouldFillOutTheForm() {
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Чехов Антон"); // Двойная фамилия через тире
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79969969601");
@@ -50,7 +50,8 @@ public class ApplicationForCardTest {
 
     //Имя без фамилии
     @Test
-    void shouldCardFormJustName() {
+    void testShouldFillOutTheFormJustName() {
+        driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Боб"); // Только имя без фамилии
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79651234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -64,7 +65,8 @@ public class ApplicationForCardTest {
 
     //Двойная фамилия через дефис
     @Test
-    void shouldCardFormWithDash() {
+    void testShouldFillOutTheFormWithDash() {
+        driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Мамин-Сибиряк Дмитрий");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79651234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
@@ -78,7 +80,8 @@ public class ApplicationForCardTest {
 
     //Двойная фамилия через пробел
     @Test
-    void shouldCardFormWithSpace() {
+    void testShouldFillOutTheFormSpace() {
+        driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Мамин Сибиряк Дмитрий"); // Двойная фамилия через пробел
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79651234567");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
